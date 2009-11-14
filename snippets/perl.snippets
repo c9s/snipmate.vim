@@ -1,10 +1,17 @@
 # #!/usr/bin/perl
 snippet #!
 	#!/usr/bin/perl
-	
+
+snippet us
+	use strict;
+
+snippet uw
+	use warninigs;
+
 # Hash Pointer
 snippet .
 	 =>
+
 # Function
 snippet sub
 	sub ${1:function_name} {
@@ -90,10 +97,13 @@ snippet slurp
 	my $${1:var};
 	{ local $/ = undef; local *FILE; open FILE, "<${2:file}"; $$1 = <FILE>; close FILE }${3}
 
-# Data Dumper
+# XXX: hope snippets could be seperated as many file to load.
+# so that snippets of a filetype could be easily extended.
+# Data::Dumper
 snippet dp
 	use Data::Dumper; warn Dumper( ${1} );
 
+# Template::Delcare
 snippet td
 	template '${1}' => sub {
 		my $self = shift;
