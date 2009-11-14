@@ -89,3 +89,21 @@ snippet cl
 snippet slurp
 	my $${1:var};
 	{ local $/ = undef; local *FILE; open FILE, "<${2:file}"; $$1 = <FILE>; close FILE }${3}
+
+# Data Dumper
+snippet dp
+	use Data::Dumper; warn Dumper( ${1} );
+
+snippet td
+	template '${1}' => sub {
+		my $self = shift;
+		${2}
+	};
+
+snippet tdp
+	template '${1} => page {
+		my $self = shift;
+		${2}
+	};
+
+
